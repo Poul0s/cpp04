@@ -6,7 +6,7 @@
 /*   By: psalame <psalame@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 10:45:58 by psalame           #+#    #+#             */
-/*   Updated: 2024/03/18 12:50:28 by psalame          ###   ########.fr       */
+/*   Updated: 2024/03/18 13:41:27 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,13 @@ class WrongAnimal
 {
 	public:
 		WrongAnimal();
+		WrongAnimal(const WrongAnimal& copy);
 		virtual ~WrongAnimal();
 		std::string	getType() const;
+		
+		// operator overload
+		WrongAnimal&	operator=(const WrongAnimal& copy);
+		
 		void	makeSound() const;
 
 	protected:
