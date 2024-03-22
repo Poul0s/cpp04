@@ -6,7 +6,7 @@
 /*   By: psalame <psalame@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:07:07 by psalame           #+#    #+#             */
-/*   Updated: 2024/03/22 09:48:03 by psalame          ###   ########.fr       */
+/*   Updated: 2024/03/22 10:06:45 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,20 @@ void	test1(int &errNb)
 void	test2(int &errNb)
 {
 	// test for materia canonical form
-	AMateria material1 = Ice();
-	Ice material2 = material1;
-	AMateria material3 = material1.clone();
+	Ice *material1 = new Ice();
+	Ice material2 = *material1;
+	Ice *material3 = (Ice *) material1->clone();
 
-	std::cout << material1.getType() << std::endl;
+	std::cout << material1->getType() << std::endl;
 	std::cout << material2.getType() << std::endl;
-	std::cout << material3.getType() << std::endl;
+	std::cout << material3->getType() << std::endl;
 	
-	if (material1.getType() != material2.getType() || material1.getType() != material3.getType())
+	if (material1->getType() != material2.getType() || material1->getType() != material3->getType())
 	{
 		std::cerr << "Test2 failed." << std::endl;
 		errNb++;
 	}
+	delete material3;
 }
 
 int	main(void)

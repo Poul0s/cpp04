@@ -6,7 +6,7 @@
 /*   By: psalame <psalame@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:08:22 by psalame           #+#    #+#             */
-/*   Updated: 2024/03/21 17:59:33 by psalame          ###   ########.fr       */
+/*   Updated: 2024/03/22 10:00:35 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Character : public ICharacter
 
 	private:
 		AMateria			*_inventory[4];
-		const std::string	_name;
+		std::string			_name;
 };
 
 #endif

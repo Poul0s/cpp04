@@ -6,7 +6,7 @@
 /*   By: psalame <psalame@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 17:22:29 by psalame           #+#    #+#             */
-/*   Updated: 2024/03/21 18:17:02 by psalame          ###   ########.fr       */
+/*   Updated: 2024/03/22 10:01:18 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,10 @@ Character::~Character(void)
 // Operator oveverload
 Character	&Character::operator=(const Character& copy)
 {
-	const_cast<std::string &> (this->_name) = copy.getName();
+	this->_name = copy.getName();
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
+	return (*this);
 }
 
 // Member functions

@@ -6,7 +6,7 @@
 /*   By: psalame <psalame@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 18:57:41 by psalame           #+#    #+#             */
-/*   Updated: 2024/03/18 18:58:49 by psalame          ###   ########.fr       */
+/*   Updated: 2024/03/22 09:59:14 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ICHARACTER_HPP
 # include <string>
 # include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

@@ -11,7 +11,7 @@ OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))
 
 OBJ_DIR	=	$(sort $(dir $(OBJ)))
 
-HEADER	=	-Iclass
+HEADER	=	-Iclass -I.
 
 NAME	=	ex03
 

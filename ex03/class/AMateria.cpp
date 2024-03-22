@@ -6,7 +6,7 @@
 /*   By: psalame <psalame@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 17:17:02 by psalame           #+#    #+#             */
-/*   Updated: 2024/03/19 14:06:10 by psalame          ###   ########.fr       */
+/*   Updated: 2024/03/22 10:09:49 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,22 @@
 AMateria::AMateria(std::string const & type) : _type(type)
 {
 }
+
+AMateria::AMateria(const AMateria &copy) : _type(copy._type)
+{
+	*this = copy;
+}
+
 AMateria::~AMateria(void)
 {
 }
+
+AMateria &AMateria::operator=(const AMateria &copy)
+{
+	(void) copy;
+	return (*this);
+}
+
 
 std::string const & AMateria::getType() const
 {
@@ -28,5 +41,6 @@ std::string const & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-	std::cout << COLOR_RED << "TODO" << COLOR_RESET << std::endl;
+	(void) target;
+	std::cout << "Default AMateria cannot be used!" << std::endl;
 }
