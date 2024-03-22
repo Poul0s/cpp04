@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psalame <psalame@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 10:45:58 by psalame           #+#    #+#             */
-/*   Updated: 2024/03/20 13:12:55 by psalame          ###   ########.fr       */
+/*   Created: 2024/03/18 16:59:33 by psalame           #+#    #+#             */
+/*   Updated: 2024/03/21 18:23:11 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
+# include <string>
+# include "ICharacter.hpp"
 
-class Animal
+class AMateria
 {
 	protected:
-		std::string type;
+		const std::string	_type;
 
 	public:
-		// constructor/destructor
-		Animal();
-		Animal(const Animal& copy);
-		virtual ~Animal();
-
-		// operator overload
-		Animal&	operator=(const Animal& copy);
-
-		std::string	getType() const;
-		virtual void	makeSound() const = 0;
+		AMateria(std::string const & type);
+		AMateria(const AMateria &copy);
+		~AMateria(void);
+		AMateria &operator=(const AMateria &copy);
+	
+		std::string const & getType() const; //Returns the materia type
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 };
 
 #endif

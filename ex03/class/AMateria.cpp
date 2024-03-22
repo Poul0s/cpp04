@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psalame <psalame@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 10:45:58 by psalame           #+#    #+#             */
-/*   Updated: 2024/03/20 13:12:55 by psalame          ###   ########.fr       */
+/*   Created: 2024/03/18 17:17:02 by psalame           #+#    #+#             */
+/*   Updated: 2024/03/19 14:06:10 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
+#include "AMateria.hpp"
+#include <iostream>
+#include "colors.h"
 
-class Animal
+AMateria::AMateria(std::string const & type) : _type(type)
 {
-	protected:
-		std::string type;
+}
+AMateria::~AMateria(void)
+{
+}
 
-	public:
-		// constructor/destructor
-		Animal();
-		Animal(const Animal& copy);
-		virtual ~Animal();
+std::string const & AMateria::getType() const
+{
+	return this->_type;
+}
 
-		// operator overload
-		Animal&	operator=(const Animal& copy);
-
-		std::string	getType() const;
-		virtual void	makeSound() const = 0;
-};
-
-#endif
+void AMateria::use(ICharacter& target)
+{
+	std::cout << COLOR_RED << "TODO" << COLOR_RESET << std::endl;
+}

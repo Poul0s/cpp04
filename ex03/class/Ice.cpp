@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psalame <psalame@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 10:45:58 by psalame           #+#    #+#             */
-/*   Updated: 2024/03/20 13:12:55 by psalame          ###   ########.fr       */
+/*   Created: 2024/03/18 18:38:50 by psalame           #+#    #+#             */
+/*   Updated: 2024/03/21 13:07:53 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
+#include "Ice.hpp"
+#include <iostream>
+#include "colors.h"
 
-class Animal
+Ice::Ice(void) : AMateria("ice")
 {
-	protected:
-		std::string type;
+}
 
-	public:
-		// constructor/destructor
-		Animal();
-		Animal(const Animal& copy);
-		virtual ~Animal();
+Ice::~Ice(void)
+{
+}
 
-		// operator overload
-		Animal&	operator=(const Animal& copy);
+AMateria	*Ice::clone() const
+{
+	return (new Ice());
+}
 
-		std::string	getType() const;
-		virtual void	makeSound() const = 0;
-};
-
-#endif
+void Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
+}

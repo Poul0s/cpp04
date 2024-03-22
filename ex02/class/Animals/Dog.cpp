@@ -6,7 +6,7 @@
 /*   By: psalame <psalame@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 10:48:22 by psalame           #+#    #+#             */
-/*   Updated: 2024/03/18 16:42:30 by psalame          ###   ########.fr       */
+/*   Updated: 2024/03/21 13:01:52 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Dog::~Dog(void)
 // operator overload
 Dog&	Dog::operator=(const Dog& copy)
 {
-	*((Animal *) this) = (Animal) copy;
+	*((Animal *) this) = (Animal &) copy;
 	*(this->brain) = *copy.brain;
 	return (*this);
 }

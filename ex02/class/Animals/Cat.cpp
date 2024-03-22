@@ -6,7 +6,7 @@
 /*   By: psalame <psalame@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 10:48:22 by psalame           #+#    #+#             */
-/*   Updated: 2024/03/18 16:42:34 by psalame          ###   ########.fr       */
+/*   Updated: 2024/03/21 13:02:07 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Cat::~Cat(void)
 // operator overload
 Cat&	Cat::operator=(const Cat& copy)
 {
-	*((Animal *) this) = (Animal) copy;
+	*((Animal *) this) = (Animal &) copy;
 	*(this->brain) = *copy.brain;
 	return (*this);
 }
