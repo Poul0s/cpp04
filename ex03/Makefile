@@ -1,11 +1,13 @@
 CC	=	c++
 
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
 
-SRC		=	class/AMateria.cpp	\
-			class/Character.cpp	\
-			class/Ice.cpp		\
-			main.cpp			\
+SRC		=	class/AMateria.cpp			\
+			class/Character.cpp			\
+			class/Ice.cpp				\
+			class/Cure.cpp				\
+			class/MateriaSource.cpp		\
+			main.cpp					\
 
 OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))
 
