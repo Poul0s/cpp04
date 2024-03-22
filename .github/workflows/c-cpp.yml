@@ -17,30 +17,12 @@ jobs:
     - name: compilation of ex00
       run: make -C ./ex00
 
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
     - name: compilation of ex01
       run: make -C ./ex01
 
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
     - name: compilation of ex02
       run: make -C ./ex02
 
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
     - name: compilation of ex03
       run: make -C ./ex03
     - name: run tests ex03
